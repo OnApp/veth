@@ -15,11 +15,17 @@ If the Compute Resources and Backup Servers are attached to the same physical Ne
 This tool does not touch the network configuration files if OnAppBridge is already up on the host when it is run, although it does still allow to change IP Address or Netmask for ifcfg-OnAppBridge:1
 
 To undo the changes made by this tool, you can perform the following actions (in this example the primary interface is enp1s0):
+
 mv /etc/sysconfig/network-scripts/ifcfg-enp1s0.orig /etc/sysconfig/network-scripts/ifcfg-enp1s0
+
 rm /etc/sysconfig/network-scripts/ifcfg-ethAppliance
+
 rm /etc/sysconfig/network-scripts/ifcfg-ethManagement
+
 rm /etc/sysconfig/network-scripts/ifcfg-onappBridge
+
 rm /etc/sysconfig/network-scripts/ifcfg-onappBridge:1
+
 rm /etc/cron.d/PrepareOnappNetwork
 
 Thanks go to https://github.com/larsks and https://github.com/jbessaguet for the inspiration and foundations of this tool found at https://github.com/jbessaguet/initscripts-veth
